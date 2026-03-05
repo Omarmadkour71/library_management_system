@@ -25,13 +25,58 @@ The application uses PostgreSQL as the database and Prisma as the ORM.
 
 ---
 
+# Installation & Setup
+
+Follow the steps below to run the project locally.
+
+---
+
+## 1- Clone the Repository
+
+bash
+git clone https://github.com/Omarmadkour71/library_management_system  
+cd library_management_system
+
+## 2️- Install Dependencies
+
+npm install
+
+## 3️- Setup Environment Variables
+
+Create a .env file in the root directory:
+
+DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/library_db"  
+PORT=3000
+
+Replace YOUR_PASSWORD with your PostgreSQL password.
+
+# 4- Setup Database
+
+Make sure PostgreSQL is installed and running.
+
+Create the database:
+
+CREATE DATABASE library_db;
+
+# 5- Run Prisma Migrations
+
+npx prisma migrate dev
+
+this will Create all tables, Apply constraints and indexes and Generate Prisma Client
+
+## 6- Start the Server
+
+npm run start
+
+---
+
 # Database
 
 ## Schema Overview
 
 This project uses **PostgreSQL** as the relational database and **Prisma ORM** for schema definition and migrations.
 
-The database is designed with normalization and relational integrity in mind.  
+The database is designed with normalization and relational integrity in mind.
 It consists of three main entities:
 
 - **Book**
